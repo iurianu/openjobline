@@ -1,0 +1,278 @@
+section {
+    &#seven-ojl, &#investeste-ojl {
+        background-color: $theme-red-bg;
+        color: #FFF;
+    }
+    &#dece-ojl, &#avantaje-ojl, &#review-ojl {
+        background-color: $theme-white-bg;
+    }
+    &#bonus-ojl {
+        background-color: $theme-blue-bg;
+    }
+    &#stripe-ojl {
+        background-color: $theme-light-blue;
+    }
+}
+
+#seven-ojl {
+    .row {
+        padding: 10px 0;
+    }
+    .col-6 {
+        h2 {
+            text-align: right;
+            padding-top: 1rem;
+        }
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+#avantaje-ojl {
+    .col-md-7 {
+        padding: 60px;
+        &:nth-of-type(2n+1) {
+            padding-left: 15px;
+        }
+    }
+    figure {
+        width: 80%;
+        img {
+            max-width: 100%;
+        }
+    }
+    h2 {
+        width: 100%;
+        padding-top: 3rem;
+    }
+    h4 {
+        margin-bottom: 40px;
+        .strong-caps {
+            font: inherit;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+    }
+    p {
+        font-size: 16px;
+    }
+    a.button {
+        @extend %button-link;
+        background-color: $theme-light-blue;
+        color: #FFF;
+    }
+}
+
+#bonus-ojl {
+    * {
+        color: #FFF;
+        font-size: 16px;
+    }
+    h2 {
+        padding: 65px 0 50px;
+        img {
+            height: 88px;
+            width: auto;
+            margin-right: 15px;
+        }
+    }
+    h3 {
+        font-size: 60px;
+        font-weight: 700;
+    }
+    .col-md-4 {
+        padding-left: 30px;
+        padding-right: 30px;
+        border-right: 1px solid $theme-white-bg;
+        &:last-of-type{
+            border: none;
+        } 
+    }
+            a.button {
+            @extend %button-link;
+            background-color: $theme-light-blue;
+                margin: 40px auto;
+        }
+}
+
+#review-ojl {
+    h2 {
+        color: #022d37;
+        padding: 50px;
+    }
+    .col-md-4 {
+        picture {
+            margin: 0 auto;
+            display: block;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            clear: both;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        i.fa-quote-left {
+            font-size: 28px;
+            color: #dadada;
+        }
+        cite {
+            display: block;
+            padding-bottom: 2em;
+            color: #ff2e39;
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 2em;
+        }
+    }
+    blockquote {
+        font-style: italic;
+        #more {
+            display: none;
+        }
+    }
+    a {
+        &#rmBtn {
+            display: block;
+            font-style: normal;            
+            font-size: 80%;
+            cursor: pointer;
+            i.fa {
+                padding-left: 5px;
+                color: #ff2e39;
+            }
+            &:hover, &:focus, &:active {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#stripe-ojl {
+    padding: 40px;
+    * {
+        color: #FFF;
+        text-align: center;
+    }
+    h3 {
+        font-size: 36px
+    }
+    a {
+        font-size: 24px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+#oferta-ojl {
+    * {
+        color: #022d37;
+    }
+    h2 {
+        padding: 40px;
+    }
+    img {
+        width: auto;
+        height: 50px;
+        float: left;
+        margin-bottom: 30px;
+    }
+    p {
+        float: left;
+        padding-left: 10px;
+        line-height: 1.3em;
+        font-size: 20px;
+    }
+}
+
+#cariera-ojl {
+    .col-md-8 {
+        padding-top: 30px;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    h3 {
+        padding-top: 4rem;
+    }
+    p {
+        font-size: 16px;
+    }
+    a.button {
+        @extend %button-link;
+        background-color: $theme-light-blue;
+        color: #FFF;
+    }
+}
+
+#banner-ojl {
+    background-image: url("../images/banner-jos.jpg");
+    @extend %blue-bg-mix;
+    padding: 0 25px 25px;
+    p {
+        padding-top: 20px;
+        border-top: 5px solid $theme-red-bg;
+        font-size: 18px;
+        font-weight: 400;
+        color: #FFF;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.3em;
+    }
+}
+
+#parteneri-ojl {
+    padding: 30px;
+    h2 {
+        padding: 20px;
+    }
+    figure {
+        img {
+            max-width: 100%;
+        }
+    }
+    ul {        
+        margin-bottom: 0;
+        list-style: none;
+        &#list {
+            display: none;
+        }
+    }
+    p#toggle-button {
+        display: block;
+        margin-top: 1.5rem;  
+        margin-left: 40px;
+        a {
+            cursor: pointer;
+        }  
+        i.fa {
+            color: $theme-red-bg;
+        }
+        
+    }
+}
+
+#investeste-ojl {
+    padding-bottom: 60px;
+    h3 {
+        display: block;
+        padding: 40px;
+        text-align: center;
+    }
+    a.button {
+        @extend %button-link;
+        background-color: #FFF;
+        color: $theme-red-bg;
+    }
+    dl {
+        dt {
+            float: left;
+        }
+        dd {
+            margin-left: 35px;
+            margin-bottom: 30px;
+        }
+    }
+}

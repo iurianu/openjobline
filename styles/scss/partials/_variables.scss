@@ -1,0 +1,74 @@
+@font-face {
+    font-family: Cabin;
+    src: url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+}
+
+@font-face {
+    font-family: Montserrat, sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+}
+
+html, body, * {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 50px !important;
+    font-weight: 700 !important;
+}
+
+h4 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #22408c;
+}
+
+$theme-red-bg: #ee3527;
+$theme-blue-bg: #415a99;
+$theme-white-bg: #f8f8f8;
+$theme-light-blue: #45baeb;
+
+%blue-bg-mix {
+    background-color: $theme-blue-bg;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+%button-link {
+    display: inline-block;    
+    margin: 0 auto;
+    height: 84px;
+    margin-top: 30px;
+    padding: 0 3rem;
+    border-radius: 5px;    
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 6rem;
+    cursor: pointer;
+    .fa {
+        float: none;
+        margin-left: 30px;
+        margin-right: -10px;
+        color: inherit;
+        background-color: transparent;
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .pull-right-md {
+        float: right !important;
+    }
+}
