@@ -8,27 +8,62 @@
     src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 }
 
+@mixin for-phone-only {
+  @media (max-width: 576px) { @content; }
+}
+@mixin for-tablet-portrait-down {
+  @media (max-width: 767px) { @content; }
+}
+@mixin for-tablet-landscape-down {
+  @media (max-width: 979px) { @content; }
+}
+@mixin for-desktop-down {
+  @media (max-width: 1199px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 768px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 980px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
 html, body, * {
     font-family: Montserrat, sans-serif;
     font-size: 14px;
 }
 
 h2 {
-    font-size: 32px !important;
-    font-weight: 700 !important;
+    font-size: 32px;
+    font-weight: 700;
     text-align: center;
     text-transform: uppercase;
 }
 
 h3 {
-    font-size: 50px !important;
-    font-weight: 700 !important;
+    font-size: 50px;
+    font-weight: 700;
 }
 
 h4 {
-    font-size: 32px;
     font-weight: 400;
     color: #22408c;
+    @include for-tablet-portrait-up {
+        font-size: 32px;
+    }
+}
+
+figure {
+    margin: 0 auto 1rem;
+}
+
+.hidden {
+    display: none;
 }
 
 $theme-red-bg: #ee3527;
@@ -46,6 +81,7 @@ $theme-light-blue: #45baeb;
 %button-link {
     display: inline-block;    
     margin: 0 auto;
+    max-width: 90% !important;
     height: 84px;
     margin-top: 30px;
     padding: 0 3rem;
@@ -64,7 +100,20 @@ $theme-light-blue: #45baeb;
         background-color: transparent;
         font-size: 18px;
     }
+    @include for-tablet-portrait-down {
+        display: block;
+        margin: 0 auto;
+        padding: 0 2rem;
+        font-size: 16px;
+        line-height: 6rem;
+    }
 
+}
+
+.redbold {
+    font-weight: 700;
+    color: $theme-red-bg;
+    text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
