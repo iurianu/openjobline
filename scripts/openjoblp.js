@@ -16,5 +16,11 @@ jQuery(document).ready(function($) {
         $(this).prev().prev().is(":visible")?$(this).text("Mai mult! +"):$(this).text("Mai putin! -");
         $(this).prev().prev().toggle('show');
     });
+
+    $('button.btn-primary').on('click', function(event) {
+        var parent = $(this).parents('div.modal-content');
+        parent.hide();
+        parent.next().show();
+    });
     
 });

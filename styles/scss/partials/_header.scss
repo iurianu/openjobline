@@ -1,10 +1,12 @@
 .hero {
-    background-image: url("../images/cover-bg.png");
+    background-image: url("http://happylp.happy-media.eu/wp-content/uploads/2020/01/cover-bg.png");
     @extend %blue-bg-mix;
     header {
         padding-top: 15px;
         .row {
-            width: 100%;
+            @include for-tablet-portrait-up {
+                width: 100%;
+            }            
         }
         @include for-tablet-landscape-down {
             .logo {
@@ -101,6 +103,7 @@
             }
         }
         .zero-com {
+            display: none;
             position: absolute;
             bottom: -10px;
             right: 30px;
@@ -135,7 +138,6 @@ section {
         width: 100%;
         padding-top: 10px;
         color: #FFF;
-        font-family: Cabin, sans-serif;
         font-size: 16px;
         font-weight: 700;
         text-transform: uppercase;
