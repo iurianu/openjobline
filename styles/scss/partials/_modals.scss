@@ -1,138 +1,204 @@
-.modal-dialog {
-    position: relative;
-    background-color: #FFF;
-    padding: 2rem 3rem 4rem;
-    border-radius: 0 !important;
-    @include not-for-phones {
-        max-width: 80%;
-    }
-    @include for-tablet-portrait-up {
-        max-width: 70%;
-    }
-    @include for-tablet-landscape-up {
-        max-width: 60%;
-    }
-    @include for-desktop-up  {
-        max-width: 50%;
-    }
-    .modal-content {
-        background-color: #e8e8e8;
-        text-align: center;
-        border-radius: 0;
-        &#surveyStart {
-            display: none;
+#surveyModal {
+    .modal-dialog {
+        position: relative;
+        background-color: #FFF;
+        padding: 2rem 0.5rem;
+        border-radius: 0 !important;
+        @include not-for-phones {
+            max-width: 80%;
+            padding: 2rem 3rem 4rem;
         }
-        &#surveyBac {
-           // display: none;
-            label {
-                &.btn-light {
-                    width: 200px;
-                    height: 65px;
-                    border: 1px solid #022d37;
-                    font-size: 24px;
-                    text-transform: uppercase;
-                    line-height: 2em;
-                    &:first-of-type {
-                        margin-right: 10px;
-                    }
-                }
+        @include for-tablet-portrait-up {
+            max-width: 70%;
+        }
+        @include for-tablet-landscape-up {
+            max-width: 60%;
+        }
+        @include for-desktop-up  {
+            max-width: 50%;
+        }
+        .modal-title {
+            @include for-tablet-portrait-down {
+                line-height: 1;
             }
         }
-        &#surveySchool {
-            display: none;
-            input {
-                &[type="text"] {
-                    width: 95%;
-                    height: 65px;
-                    padding-left: 10px;
-                    border: 1px solid #022d37;
-                    border-radius: 5px;
-                    font-size: 18px;
-                }
+        .modal-content {
+            background-color: #e8e8e8;
+            text-align: center;
+            border-radius: 0;
+            &#surveyStart {
+               // display: none;
             }
-        }
-        input {
-            &[type="radio"] {
+            &#surveyName {
                 display: none;
             }
+            &#surveyAge {
+                display: none;
+            }
+            &#surveyTown {
+                display: none;
+            }
+            &#surveyTel {
+                display: none;
+            }
+            &#surveyMail {
+                display: none;
+            }
+            &#surveySchool {
+                display: none;
+            }
+            &#surveyYear {
+                display: none;
+            }
+            &#surveyCountry {
+                display: none;
+            }
+            &#surveyTime {
+                display: none;
+            }
+            &#surveyFinal {
+                display: none;
+                h2 {
+                    width: 100%;
+                    i {
+                        &.fa-check-circle {
+                            font-size: 100px;
+                            color: $theme-light-blue;
+                        }
+                    }
+                }
+                
+            }
+        }       
+        picture {
+            display: block;
+            margin: 15px auto 0;
+            width: 100px;
+            height: 100px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
-    }
-    picture {
-        display: block;
-        margin: 15px auto 0;
-        width: 100px;
-        height: 100px;
-        img {
+        h5 {
             width: 100%;
-            height: 100%;
+            font-size: 24px;
+            text-align: center;
+            @include for-tablet-portrait-down {
+                font-size: 22px;
+            }
+        }
+        button {
+            &.close {
+                position: absolute;
+                right: 0.5rem;
+                top: 0.5rem;
+                background-color: $theme-red-bg;
+                padding: 0 8px 3px;
+                border-radius: 50%;
+                line-height: 1.2rem;
+                cursor: pointer !important;
+            }
+            &.btn-primary {
+                position: relative;
+                background-color: #45baeb;
+                padding: 1rem 3rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: -40px;
+                i.fa {
+                    margin-left: 0.5rem;
+                    font-size: 80%;
+                    font-weight: 400;
+                }
+            }
+        }
+        .modal-body {
+            @include for-tablet-portrait-down {
+                font-size: 14px;
+                padding-top: 0;
+            }
+        }
+        .modal-footer {
+            * {
+                margin: .5rem auto 0;
+            }
+            button {
+                @include for-phone-only {
+                    padding: 0.5rem 2rem;
+                }
+            }
         }
     }
-    h5 {
-        width: 100%;
-        font-size: 24px;
-        text-align: center;
-    }
-    button {
-        &.close {
-            position: absolute;
-            right: 0.5rem;
-            top: 0.5rem;
-            background-color: $theme-red-bg;
-            padding: 0 8px 3px;
-            border-radius: 50%;
-            line-height: 1.2rem;
-            cursor: pointer !important;
+    input {
+        &[type="radio"] {
+            display: none;
         }
-        &.btn-primary {
+        &[type="text"], &[type="number"], &[type="tel"], &[type="email"] {
+            width: 95%;
+            height: 65px;
+            padding-left: 10px;
+            border: 1px solid #022d37;
+            border-radius: 5px;
+            font-size: 18px;
+            @include for-phone-only {
+                height: 45px;
+                font-size: 14px;
+            }
+        }
+        &[type="submit"] {
             position: relative;
             background-color: #45baeb;
             padding: 1rem 3rem;
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: -40px;
-            i.fa {
-                margin-left: 0.5rem;
-                font-size: 80%;
-                font-weight: 400;
+            @include for-phone-only {
+                height: 45px;
+                font-size: 14px;
+                line-height: 1rem;
             }
         }
     }
-    .modal-footer {
-        * {
-            margin: .5rem auto 0;
+     label {
+        &.btn-light {
+            width: 200px;
+            height: 65px;
+            border: 1px solid #022d37;
+            font-size: 24px;
+            text-transform: uppercase;
+            line-height: 2em;
+            /*&:first-of-type {
+                margin-right: 10px;
+            }*/
         }
     }
 }
 
-input {
-    &[type=radio] {
-        
+
+#video-popup {
+    .modal-dialog {
+        max-width: 100%;
+        height: auto;
+        margin: 20px auto auto 15%;
+        padding: 15px;
+        .modal-body {
+            button.close {
+                margin-top: -1rem;
+                margin-right: -0.5rem;
+            }
+        }
+        @include not-for-phones {
+            max-width: 80%;
+        }
+        @include for-tablet-portrait-up {
+            max-width: 70%;
+        }
+        @include for-tablet-landscape-up {
+            max-width: 70%;
+        }
+        @include for-desktop-up  {
+            max-width: 70%;
+        }        
     }
 }
-
-/*
-input[type=radio][value="option1"]:checked+label:after {
-	border-color: #2e7d32;
-	background-color: #2e7d32
-}
-
-input[type=radio][value="option2"]:checked+label:after {
-	border-color: #64dd17;
-	background-color: #64dd17
-}
-
-input[type=radio][value="option3"]:checked+label:after {
-	border-color: #ffea00;
-	background-color: #ffea00
-}
-
-input[type=radio][value="option4"]:checked+label:after {
-	border-color: #ff9800;
-	background-color: #ff9800
-}
-
-input[type=radio][value="option5"]:checked+label:after {
-	border-color: #d50000;
-	background-color: #d50000
-}
-*/

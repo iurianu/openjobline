@@ -29,8 +29,11 @@ h4 {
     }
 }
 
-figure {
-    margin: 0 auto 1rem;
+figure {margin: 0 auto 1rem;}
+
+strong {
+    font: inherit;
+    font-weight: 700;
 }
 
 section {
@@ -71,7 +74,11 @@ section {
         }
         p {
             @include for-tablet-portrait-down {
+                text-align: center;
                 font-size: 14px;
+            }
+            @include for-phone-only {
+                font-size: 12px;
             }
         }
     }
@@ -93,18 +100,20 @@ section {
             padding-left: 15px;
             figure {
                 margin: 0 0 1rem auto;
-                text-align: right
+                text-align: right;
             }
         }
         @include for-tablet-portrait-up {
-            padding: 40px 60px 60px;
+            padding: 10px 60px 60px;
         }
     }
     figure {
-        max-width: 80%;
+        max-width: 100%;
+        height: auto;
         margin: 0;
         img {
-            max-width: 100%;
+            width: 100%;
+            height: auto;
             &[alt="cursuri germana"] {
                 margin-left: -8%;
                 @include for-tablet-portrait-up {
@@ -163,9 +172,26 @@ section {
                     }
                 }
                 td {
-                    width: 30;
+                    width: 30%;
                     @include for-tablet-portrait-down {
                         width: 100%;
+                    }
+                    div {
+                        &.header-line {
+                            width: 100%;
+                            position: relative;
+                            margin: 0;
+                            padding: 0
+                        }
+                        &.line-div {
+                            position: absolute;
+                            width: 100%;
+                            height: 0;
+                            //top: 4.6rem;
+                            margin: 0;
+                            padding: 0;
+                            border-bottom: 1px solid #ccd3d5
+                        }
                     }
                 }
             }
@@ -313,7 +339,12 @@ section {
     }
 }
 
+#second-stripe-ojl {
+    @extend #stripe-ojl;
+}
+
 #oferta-ojl {
+    padding-top: 30px;
     * {
         color: #022d37;
     }
@@ -352,31 +383,18 @@ section {
                     border-bottom-width: 1px;
                 }
             }
+            .col-4 {
+                img {
+                    float: right;
+                }
+            }
+            .col-8 {
+                p {
+                    padding-top: 1rem;
+                }
+            }
         }
     }
-/*    h2 {
-        padding: 40px;
-    }
-    img {
-        width: auto;
-        height: 50px;
-        float: left;
-        margin-bottom: 30px;
-    }
-    p {
-        float: left;
-        padding-left: 10px;
-        line-height: 1.3em;
-        font-size: 20px;
-    }
-    @include for-tablet-portrait-down {
-        img {
-            height: 40px;
-        }
-        p {
-            font-size: 14px;
-        }
-    */
 }
 
 #cariera-ojl {
@@ -386,7 +404,8 @@ section {
         text-align: center;
     }
     h3 {
-        padding-top: 4rem;
+        padding-top: 2rem;
+        font-size: 36px;
         @include for-tablet-portrait-down {
             padding-top: 1rem;
             font-size: 30px;
@@ -403,13 +422,14 @@ section {
     }
     figure {
         img {
-            max-width: 100%;
+            width: 100%;
+            height: auto;
         }
     }
 }
 
 #banner-ojl {
-    background-image: url("http://happylp.happy-media.eu/wp-content/uploads/2020/01/banner-jos-300x40.jpg");
+    background-image: url("../images/banner-jos.jpg");
     @extend %blue-bg-mix;
     padding: 0 25px 25px;
     p {
@@ -421,9 +441,9 @@ section {
         text-transform: uppercase;
         text-align: center;
         line-height: 1.5em;
-  /*      &:nth-of-type(2n+2) {
+        &:nth-of-type(2n+2) {
             border-top-width: 0;
-        } */
+        }
     }
 }
 
@@ -496,6 +516,12 @@ section {
             margin-left: 0;
         }
     }
+    #review-cta {
+        margin-top: 1rem;
+        .view-control {
+            margin-left: 30px;
+        }
+    }
 }
 
 .hidden, extended.hidden {
@@ -518,9 +544,16 @@ section {
 }
 
 .redbold {
+    font: inherit;
     font-weight: 700;
     color: $theme-red-bg;
     text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+    .hidden-sm {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -531,21 +564,4 @@ section {
     .pull-right-md {
         float: right !important;
     }
-}
-
-.header-line {
-	width: 100;
-	position: relative;
-	margin: 0;
-	padding: 0
-}
-
-.header-line .line-div {
-	position: absolute;
-	width: 100%;
-	height: 0;
-	top: 4.6rem;
-	margin: 0;
-	padding: 0;
-	border-bottom: 1px solid #ccd3d5
 }

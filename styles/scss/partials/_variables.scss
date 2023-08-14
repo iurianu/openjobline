@@ -50,7 +50,7 @@ $theme-light-blue: #45baeb;
     font-size: 20px;
     text-transform: uppercase;
     text-align: center;
-    line-height: 6rem;
+    line-height: 5rem;
     cursor: pointer;
     .fa {
         float: none;
@@ -60,12 +60,11 @@ $theme-light-blue: #45baeb;
         background-color: transparent;
         font-size: 18px;
     }
-    @include for-tablet-portrait-down {
+    @include for-phone-only {
         display: block;
         margin: 0 auto;
         padding: 0 2rem;
         font-size: 16px;
-        line-height: 6rem;
     }
 
 }

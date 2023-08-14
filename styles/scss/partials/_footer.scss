@@ -11,16 +11,17 @@ footer {
         @include for-tablet-portrait-down {
             padding: 0;
             border: none;
-            p {
-                font-size: 12px;
-            }
-        }
-        p {
-            display: inline-block;
         }
         &:last-of-type {
             border: none;         
         }
+        @include for-tablet-portrait-down {
+            padding-bottom: 10px;
+            font-size: 14px;
+        }
+        @include for-phone-only {
+            font-size: 12px;
+        }      
     }
     @include for-tablet-portrait-down {
         padding: 10px 25px;
